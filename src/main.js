@@ -57,5 +57,9 @@ function main(){
     console.log("SI emails:", matches.si);
     console.log("Credit card numbers:", matches.creditCard);
     console.log("Phone numbers:", matches.phoneNumberPattern);
+
+    const outputFile = path.join(__dirname, '../output/sample-output.json');
+    fs.writeFileSync(outputFile, `${JSON.stringify(matches, null, 2)}\n`, 'utf-8');
+    console.log(`Output written to ${outputFile}`);
 }
 main();
