@@ -2,6 +2,23 @@
 const fs = require('fs');
 const path = require('path');
 
+function passesLuhnCheck(cardNumber) {
+    const digits = cardNumber.replace(/\D/g, '').split('').reverse();
+    const checksum = digits.reduce((total, digit, index) => {
+        let value = Number(digit);
+        if (index % 2 === 1) {
+            value *= 2;
+            if (value > 9) value -= 9;
+        }
+        return total + value;
+    }, 0);
+    return checksum % 10 === 0;
+}
+
+function maskCardNumber(cardNumber) {
+    return `${cardNumber.slice(0, 4).replace(/\d/g, '*')}-${cardNumber.slice(5, 14).replace(/\d/g, '*')}-${cardNumber.slice(-4)}`;
+}
+
 function extractEmails(text) {
     // Define regex patterns for different email types and credit card numbers
     const patterns = {
@@ -12,12 +29,17 @@ function extractEmails(text) {
         phoneNumberPattern: /(?<![\w])(?:\+\d{1,3}[-\s]?)?(?:\(\d{3}\)[-\s]?\d{3}[-\s]?\d{4}|\d{3}[-\s]\d{3}[-\s]\d{4}|\d{3}[-\s]\d{3}[-\s]\d{3}|\d{3}[-\s]\d{4})\b/g
     };
     // Using Object.fromEntries to create an object with unique matches for each pattern
-    return Object.fromEntries(
+    const matches = Object.fromEntries(
         Object.entries(patterns).map(([name, regex]) => [
             name,
             [...new Set((text.match(regex) || []))]
         ])
     );
+
+    matches.creditCard = matches.creditCard
+        .filter(passesLuhnCheck)
+        .map(maskCardNumber);
+    return matches;
 }
 
 //function to read the file

@@ -63,4 +63,12 @@ The script reads `input/raw-text.txt` and prints the extracted email addresses, 
 - Results are de-duplicated before being printed.
 - The extraction is intended for the formats represented in the sample log and is not a complete international phone-number validator.
 
+## Security Handling
+
+- Input is treated as plain text. The script does not execute SQL, JavaScript, URLs, or other content found in the log.
+- Unsupported or malformed email and phone formats are not returned by the corresponding regular expressions.
+- Card numbers are checked with the Luhn algorithm before they are returned.
+- Accepted card numbers are masked before console output, showing only the last four digits.
+- Luhn validation does not prove that a card is active, genuine, or safe to use. Production systems should use a payment provider or a dedicated validation service and should avoid storing card numbers.
+
 
