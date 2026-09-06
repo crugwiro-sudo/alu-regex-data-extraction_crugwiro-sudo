@@ -56,7 +56,7 @@ From the project root, run:
 node src/main.js
 ```
 
-The script reads `input/raw-text.txt` and prints the extracted email addresses, credit card numbers, and phone numbers to the console.
+The script reads `input/raw-text.txt`, prints the extracted email addresses, credit card numbers, and phone numbers to the console, and writes the JSON result to `output/sample-output.json`.
 
 ## Notes
 
