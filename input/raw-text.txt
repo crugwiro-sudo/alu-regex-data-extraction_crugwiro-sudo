@@ -1,0 +1,169 @@
+CUSTOMER SERVICE LOGS - BATCH PROCESSING
+===============================================
+
+LOG ENTRY 001:
+User reported issue at 14:30:45 UTC
+Contact: john.doe@gmail.com
+Backup contact: j.doe@alueducation.com
+Phone: +1-555-0123
+Order total: $450.99 USD
+
+---
+
+LOG ENTRY 002:
+Transaction processed. Invoice sent to sarah_smith@alumni.alueducation.com
+Card used: 4532-0151-1283-0366
+Amount charged: €325.50
+Timestamp: 11:45 PM
+
+---
+
+LOG ENTRY 003:
+Invalid entries flagged:
+- Email: @alueducation.com (missing username)
+- Email: user.name@domain (wrong domain)
+- Card: 1234 (incomplete)
+- Card: 1111-2222-3333-4444 (invalid checksum)
+
+---
+
+LOG ENTRY 004:
+Support agent johnson.martinez@si.alueducation.com processed refund
+Card: 5425233010103379
+Payment: $199.99
+Reference: #OrderABC123
+Hash tags in notes: #billing #resolved #vip
+
+---
+
+LOG ENTRY 005:
+Suspicious activity detected:
+- Text: robert@example.com'; DROP TABLE users; --
+- Text: "'; OR '1'='1
+- Card: 9999999999999999 (test card)
+- Email with spaces: user @ domain.com
+- Email: firstname.lastname+tag@alueducation.com
+
+---
+
+LOG ENTRY 006:
+Multiple contacts for case #78945:
+Primary: emma.wilson@outlook.com
+Secondary: michael.chen@si.alueducation.com
+Tertiary: admin@malicious-site.xyz
+URL reference: https://www.secure-bank.com/verify
+Alternate URL: http://localhost:8080/admin?password=123
+
+---
+
+LOG ENTRY 007:
+Invoice details:
+Time processed: 2:15 AM
+Time logged: 16:45
+Duration: 45 minutes
+Cost: £1,299.99
+Alternative format: $1,299.99 CAD
+
+---
+
+LOG ENTRY 008:
+Contact attempts (malformed):
+david.garcia@alueducation.com
+david.garcia @alueducation.com (extra space)
+david.garcia@alueducation.com. (trailing period)
+david.garcia @ alueducation.com
+DAVID.GARCIA@ALUEDUCATION.COM (uppercase)
+
+---
+
+LOG ENTRY 009:
+Payment methods:
+Visa: 4111-1111-1111-1111
+Mastercard: 5555555555554444
+AMEX: 378282246310005
+Invalid: 4111-1111-1111-111 (incomplete)
+Formatted: 4532 0151 1283 0366
+
+---
+
+LOG ENTRY 010:
+Social media engagement:
+Posted by: recruiter@alueducation.com
+Tags used: #ALUCommunity #HiringNow #AfricaLeadership
+URL shared: https://alumni.alueducation.com/careers
+Interaction time: 9:30 AM
+Engagement: €50.00 budget allocated
+
+---
+
+LOG ENTRY 011:
+API response injection attempt:
+Raw: "email": "test@test.com\n<script>alert('xss')</script>"
+Attempted: admin@gmail.com<img src=x onerror=alert(1)>
+Phone number format attempt: +1 (555) 000-1234
+Real phone: +256-701-234-567
+
+---
+
+LOG ENTRY 012:
+Batch processing summary:
+Records processed: 47
+Time window: 08:00 to 20:00
+Flagged records: 8
+Cost: $2,500.00 USD
+Recovery: ¥125,000 JPY
+URL log: https://api.example.com/v1/logs?filter=batch&date=2026-09-06
+
+---
+
+LOG ENTRY 013:
+Alumni verification:
+Email: alumni.contact@alumni.alueducation.com
+SI department: tech.support@si.alueducation.com
+Wrong domain: alumni.contact@alumni.education.com
+Blank email:  
+Null reference: NULL@example.com
+
+---
+
+LOG ENTRY 014:
+Transaction times and amounts:
+09:45 - Transaction: $99.99
+14:23:30 - Charge: £150.50
+Midnight: 00:00 - Settlement: €200.00
+23:59:59 - Cutoff time
+
+---
+
+LOG ENTRY 015:
+Extraction validation (edge cases):
+Card with letters: 4532015A1283B366
+Email too long: verylongemailaddresswithtoomanycharactersinthelocalparthereomgstoppleaseimintesting@alueducation.com
+Phone: 555 (incomplete)
+URL: htp://typo-domain.com
+Hash: #tag!!! (symbols after)
+Currency: 999,999.99 EUR
+
+---
+
+LOG ENTRY 016:
+Data quality checks passed:
+Contact person: james.lee@si.alueducation.com
+Primary card: 6011111111111117
+Secondary card on file: 3782822463100051
+Amount pending: $5,000.00 USD
+Hashtags: #Processing #Verified #Ready
+Request time: 17:35
+
+---
+
+LOG ENTRY 017:
+Final batch notes:
+- Reviewed by: supervisor@alueducation.com
+- Support escalation: help@alumni.alueducation.com
+- Status update at 11:20 PM
+- Total cost: ¥1,000,000
+- Website: https://secure-checkout.alueducation.com/payment
+- Social: #ALUGraduates #ClassOf2024
+- Invalid attempt: ../../../../etc/passwd
+- Bad card: 0000-0000-0000-0000
