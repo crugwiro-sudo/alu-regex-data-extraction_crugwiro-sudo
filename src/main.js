@@ -9,6 +9,7 @@ function extractEmails(text) {
         alumni: /[A-Za-z0-9._%+\-]+@alumni\.alueducation\.com\b/gi,
         si: /[A-Za-z0-9._%+\-]+@si\.alueducation\.com\b/gi,
         creditCard: /\b\d{4}-\d{4}-\d{4}-\d{4}\b/g,
+        phoneNumberPattern: /(?<![\w])(?:\+\d{1,3}[-\s]?)?(?:\(\d{3}\)[-\s]?\d{3}[-\s]?\d{4}|\d{3}[-\s]\d{3}[-\s]\d{4}|\d{3}[-\s]\d{3}[-\s]\d{3}|\d{3}[-\s]\d{4})\b/g
     };
     // Using Object.fromEntries to create an object with unique matches for each pattern
     return Object.fromEntries(
@@ -33,5 +34,6 @@ function main(){
     console.log("Alumni emails:", matches.alumni);
     console.log("SI emails:", matches.si);
     console.log("Credit card numbers:", matches.creditCard);
+    console.log("Phone numbers:", matches.phoneNumberPattern);
 }
 main();
